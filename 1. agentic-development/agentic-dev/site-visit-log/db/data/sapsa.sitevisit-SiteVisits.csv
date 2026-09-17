@@ -1,0 +1,5 @@
+ID;customerName;country_code;visitDate;purpose;status_code;notes
+6f1c1f0e-2a4b-4c55-9a1e-1b2c3d4e5f01;Volvo Cars Torslanda;SE;2026-10-05;Quarterly service review;OPEN;Bring the updated maintenance plan.
+6f1c1f0e-2a4b-4c55-9a1e-1b2c3d4e5f02;Maersk Line;DK;2026-09-01;Onboarding workshop;COMPLETED;
+6f1c1f0e-2a4b-4c55-9a1e-1b2c3d4e5f03;Equinor Bergen;NO;2026-11-12;Site inspection;OPEN;
+6f1c1f0e-2a4b-4c55-9a1e-1b2c3d4e5f04;Nokia Espoo;FI;2026-08-20;Contract renewal;CANCELLED;Customer postponed to next quarter.

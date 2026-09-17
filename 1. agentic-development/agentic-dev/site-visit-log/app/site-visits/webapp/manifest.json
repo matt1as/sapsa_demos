@@ -1,0 +1,68 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "sapsa.sitevisits",
+    "type": "application",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": { "version": "1.0.0" },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/site-visit/",
+        "type": "OData",
+        "settings": { "odataVersion": "4.0" }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": { "desktop": true, "tablet": true, "phone": true }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": { "sap.m": {}, "sap.ui.core": {}, "sap.fe.templates": {} }
+    },
+    "models": {
+      "i18n": { "type": "sap.ui.model.resource.ResourceModel", "settings": { "bundleName": "sapsa.sitevisits.i18n.i18n", "supportedLocales": [""], "fallbackLocale": "" } },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": { "operationMode": "Server", "autoExpandSelect": true, "earlyRequests": true }
+      }
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        { "pattern": ":?query:", "name": "SiteVisitList", "target": "SiteVisitList" },
+        { "pattern": "SiteVisit({key}):?query:", "name": "SiteVisitDetails", "target": "SiteVisitDetails" }
+      ],
+      "targets": {
+        "SiteVisitList": {
+          "type": "Component",
+          "id": "SiteVisitList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/SiteVisit",
+              "variantManagement": "Page",
+              "initialLoad": "Enabled",
+              "navigation": { "SiteVisit": { "detail": { "route": "SiteVisitDetails" } } },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": { "tableSettings": { "type": "ResponsiveTable" } }
+              }
+            }
+          }
+        },
+        "SiteVisitDetails": {
+          "type": "Component",
+          "id": "SiteVisitDetails",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": { "settings": { "contextPath": "/SiteVisit", "editableHeaderContent": false } }
+        }
+      }
+    }
+  },
+  "sap.fiori": { "registrationIds": [], "archeType": "transactional" }
+}

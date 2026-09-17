@@ -1,0 +1,4 @@
+code;name;descr
+OPEN;Open;Visit is planned or in progress
+COMPLETED;Completed;Visit has taken place
+CANCELLED;Cancelled;Visit was cancelled

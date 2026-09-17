@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# CAP / CDS build output
+target/
+_out/
+gen/
+@cds-models/
+.cdsrc-private.json
+default-*.json
+*.sqlite
+
+# MTA
+mta_archives/
+*_mta_build_tmp
+*.mtar
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
